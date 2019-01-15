@@ -1,0 +1,85 @@
+body {
+    margin: auto;
+    padding: 0% 10%;
+    
+    background-image: url("assests/background.png")
+}
+
+a {
+    font-family: Arial;
+    font-size: 12px;
+    text-decoration: underline;
+    color: mediumvioletred;
+}
+p {
+    font-family: monospace;
+    font-size: 12px;
+    text-align: left;
+    
+}
+h1 {
+    font-family: Arial;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 7px 10%;
+    background-color: dimgrey;
+    }
+
+/*Meg kéne oldani, hogy sorrendben jelenjenek meg*/
+
+#navbar a {
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: right;
+    text-decoration: underline;
+    float: right;
+    padding: 0px 20px;
+    margin-top: 5px;
+    }
+
+#head {
+    padding-top: 50px;
+}
+
+#head h1{
+    font-size: 40px;
+}
+
+#head h2{
+    color: mediumvioletred;
+}
+
+#head p{
+    font-size: 14px;
+}
+
+#separator h3{
+    text-align: center;
+    font-weight: normal;
+}
+
+#definitions h1{
+    text-align: center;
+    padding: 30px 0px;
+}
+
+

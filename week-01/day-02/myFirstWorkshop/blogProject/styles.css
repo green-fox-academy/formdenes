@@ -1,0 +1,75 @@
+body {
+    margin: auto;
+    padding: 0% 10%;
+    font-family: "Raleway"
+}
+
+a {
+    font-family: "Raleway";
+    font-size: 12px;
+    text-decoration: underline;
+    color: mediumvioletred;
+}
+p {
+    font-family: 'Raleway';
+    font-size: 14px;
+    text-align: left;
+    padding: 4px 2px;
+}
+h1 {
+    font-family: "Raleway";
+    font-size: 35px;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: "Raleway";
+    font-size: 20px;
+    font-weight: bold;
+    margin: 40 0px 20px 0px;
+}
+
+h3 {
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    
+}
+
+#header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 0% 10%;
+    background-color: rgb(101, 230, 208);
+}
+
+#mainContent {
+    padding-top: 100px;
+}
+
+.bordered {
+    border: 1.2px solid rgb(101, 80, 110);
+}
+.stuffed p{
+    margin-top: 0px;
+}
+
+.button {
+    border: 1.5px solid rgb(101, 80, 110);
+    border-radius: 15px;
+    padding: 5px 10px;
+    width: fit-content;
+    background-color: rgb(160, 250, 235);
+}
+
+.post {
+    padding: 15px 4px 4px 4px;
+    margin: 30px 0px;
+}
+
+.post h2 {
+    margin: 0px;
+}
