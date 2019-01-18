@@ -1,7 +1,7 @@
 'use strict';
 export{};
 
-let lineCount: number = 7;
+let lineCount: number = 111;
 let print: string = "";
 for (let i: number = 1; i<= lineCount; i++){
     if (i <= Math.round(lineCount / 2)){
