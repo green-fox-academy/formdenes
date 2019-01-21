@@ -7,3 +7,6 @@ function appendAFunc(a:string) {
 }
 
 console.log(appendAFunc(typo));
+/* 
+let appendBFunc = (a: string) => a + "b";
+console.log(appendBFunc(typo)); */
