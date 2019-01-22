@@ -17,12 +17,25 @@ const students: any[] = [
 // console.log(students.length);
 
 
-function candies(list){
+function candies(list: any []){
     let sum: number = 0;
     for (let i:number = 0; i< list.length;i++){
-        sum+=list[i];
+        // console.log(list[i].candies);
+        sum+=list[i].candies;
+        // console.log(sum);
     }
     return sum;
 
 }
-candies(students);
+console.log(candies(students));
+
+function ageSum(list: any[]){
+    let sum: number = 0;
+    for(let i:number = 0; i<list.length;i++){
+        if (list[i].candies<5){
+            sum+= list[i].age;
+        }
+    }
+    return sum;
+}
+console.log(ageSum(students));
