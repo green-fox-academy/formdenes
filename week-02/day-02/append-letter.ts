@@ -5,7 +5,7 @@ export{};
 let far: string[] = ['bo', 'anacond', 'koal', 'pand', 'zebr'];
 
 function appendA (array: string[]){
-    return array.map();
+    return array.map(value => value.concat("a"));
 }
 
 
