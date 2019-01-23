@@ -2,9 +2,9 @@
 
 
 function subint (value:number, list: number[]){
-    let foundNumbers:number[] = list.filter((numb, index) => {
-        let str:string = numb.toString()
-        if (numb.toString().indexOf(value.toString())!==-1){
+    let foundNumbers:number[] = list.filter(numb => {
+        let str:string = numb.toString();
+        if (str.indexOf(value.toString())!==-1){
             return value;
         }
     });
