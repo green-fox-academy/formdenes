@@ -1,5 +1,5 @@
 'use strict';
-export{};
+
 
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
