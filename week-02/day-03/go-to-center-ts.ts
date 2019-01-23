@@ -1,5 +1,5 @@
 'use strict';
-export{};
+
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
@@ -23,5 +23,6 @@ function drawLine(x1:number, y1:number){
     ctx.lineTo(300,200);
     ctx.stroke();
 }
-
-drawLine(0,0);
+for (let i:number = 0;i<3;i++){
+    drawLine(Math.random()*600,Math.random()*400);
+}
