@@ -22,14 +22,20 @@ function drawLine(x1:number, y1:number, x2:number, y2:number, color: string){
 function drawP(startx:number, starty:number, size: number, density:number, color:string[]){
     for (let i: number = 0; i<2; i++){
         for (let j: number = 0;j<density; j++){
-            drawLine(i*j*(size/density)+startx,(1-i)*j*(size/density)+starty,(1-i)*j*(size/density)+(i*size)+startx,(i)*j*(size/density)+((1-i)*size)+starty,color[i]);
+            drawLine(
+                i*j*(size/density)+startx,
+                (1-i)*j*(size/density)+starty,
+                (1-i)*j*(size/density)+(i*size)+startx,
+                (i)*j*(size/density)+((1-i)*size)+starty,
+                color[i]
+                );
         }
     }
 }
 
 //const values
 const canvasSize:number = 900;
-const div: number = 30;
+const div: number = 4;
 const width:number = canvasSize/div;
 
 //dynamic density
