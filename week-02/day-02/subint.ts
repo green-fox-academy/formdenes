@@ -2,12 +2,7 @@
 
 
 function subint (value:number, list: number[]){
-    let foundNumbers:number[] = list.filter(numb => {
-        let str:string = numb.toString();
-        if (str.indexOf(value.toString())!==-1){
-            return value;
-        }
-    });
+    let foundNumbers:number[] = list.filter(numb => numb.toString().indexOf(value.toString())!==-1);
     return foundNumbers.map(num => list.indexOf(num));
     
 }
