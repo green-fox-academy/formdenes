@@ -7,8 +7,8 @@ const ctx = canvas.getContext('2d');
 
 //const values
 const canvasSize:number = 900;
-const hexagoneSize:number = 50;
-const circleCount:number = 4;
+const hexagoneSize:number = 30;
+const circleCount:number = 8;
 
 //dynamic values
 const counti:number =Math.floor(canvasSize/hexagoneSize);
@@ -22,24 +22,37 @@ function randomColor(){
 
 //Hexagon drawing function (coordinates of the middle point, the size of the sides, the color of the hexagon)
 function drawHexagon(xstart:number, ystart:number,size:number, color){
+
     //the height of one triangle inside of the hexagon
     const m:number = Math.sqrt(3)/2*size;
+
     //The coordinates of the hexagon relative to the middle point
-    const dinCoord: any[][] = [
-        [xstart-size/2,ystart+m],
-        [xstart + size/2,ystart + m],
-        [xstart + size,ystart],
-        [xstart + size/2,ystart-m],
-        [xstart - size/2,ystart - m],
-        [xstart - size,ystart],
-       ];
+    let x:number = 0;
+    let y:number = 0;
+    let a:number = 0;
+    let b:number = 0;
+    let c:number = 0;
+    let d:number = 0;
+    let even:number = 0;
+    let odd:number = 0;
+    
     //Begin drawing the hexagon, setting up, and moving to the fist coordinate
     ctx.strokeStyle = color;
     ctx.beginPath();
-    ctx.moveTo(dinCoord[0][0],dinCoord[0][1]);
+    ctx.moveTo(xstart-size/2, ystart + m);
+
     //Drawing the remaining 2 sides, then closing path, and stroke it
-    for (let i:number = 0; i<dinCoord.length-1; i++){
-        ctx.lineTo(dinCoord[i+1][0],dinCoord[i+1][1]);
+    for (let i:number = 0; i<6; i++){
+        even = 1-i%2;
+        odd = i%2;
+        a = even*(-1)+odd*1;
+        b = Math.floor(i%3/2)*(-1)+1+Math.floor(i%3/2)*(-2);
+        c = 1-Math.floor(i/3)-(Math.floor(i/3));
+        d = 1-Math.floor(i%3/2);
+        x = xstart + a*b*size/2;
+        y = ystart + c*d*m;
+        console.log(`(${x},${y})`);
+        ctx.lineTo(x,y);
     } 
     ctx.closePath();
     ctx.stroke();
