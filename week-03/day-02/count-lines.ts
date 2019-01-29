@@ -3,9 +3,9 @@ export{};
 
 const fs = require('fs');
 
-const myFileName:string = 'my-file.txt';
 
 try{
+  const myFileName:string = 'my-file.txt';
   let myFile = fs.readFileSync(myFileName, 'utf8');
 
   
