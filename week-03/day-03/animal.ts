@@ -1,12 +1,10 @@
 'use strict';
-export{};
-
-class Animal{
-  hunger: 50;
-  thirst: 50;
+export class Animal{
+  hunger: number = 50;
+  thirst: number = 50;
   constructor(){
-    this.hunger = 50;
-    this.thirst = 50;
+    this.hunger = Math.floor(Math.random()*50);
+    this.thirst = Math.floor(Math.random()*50);
   }
   eat(){
     this.hunger--;
