@@ -45,7 +45,7 @@ function drawTriangle(xstart:number, ystart:number,size:number, color){
     } 
     ctx.closePath();
     ctx.stroke();
-    if (size>100){
+    if (size>10){
         drawTriangle(xstart-size/4,ystart+m/4,size/2,randomColor(seed*size));
         drawTriangle(xstart,ystart-m/4,size/2,randomColor(seed*size));
         drawTriangle(xstart+size/4,ystart+m/4,size/2,randomColor(seed*size));
