@@ -4,12 +4,12 @@ export class Plant {
   color:string;
   needWater:boolean;
   water:number;
-  minWater:number;
+  private minWater:number;
 
-  constructor(c:string, mW:number, nW:boolean = true, w:number = 0){
+  constructor(c:string, mW:number){
     this.color = c;
-    this.needWater = nW;
-    this.water = w;
+    this.needWater = true;
+    this.water = 0;
     this.minWater = mW;
   }
 
