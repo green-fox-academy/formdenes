@@ -1,6 +1,6 @@
 'use strict';
 
-const path:string = 'countchar.txt'
+const path:string = './countchar.txt'
 
 const mostCommonItem = (myArray) =>
   myArray.reduce(
