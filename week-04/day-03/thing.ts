@@ -2,7 +2,11 @@ interface Comparable {
   compareTo(other: Comparable): number;
 }
 
-class Thing {
+interface Printable{
+  printAllFields();
+}
+
+class Thing implements Comparable, Printable {
   private name: string;
   private completed: boolean;
 
@@ -29,6 +33,9 @@ class Thing {
         return 1;
     }
     else return 0;
+  }
+  printAllFields(){
+    console.log(`${this.completed? '[x]' : '[ ]'} ${this.name} `);
   }
 }
 

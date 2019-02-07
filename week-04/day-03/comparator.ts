@@ -12,3 +12,7 @@ dominoes.push(new Domino(7, 1));
 console.log(dominoes.sort(function (a: Domino , b: Domino): number {
   return a.compareTo(b);
 }));
+
+for (let domino of dominoes) {
+  domino.printAllFields();
+}

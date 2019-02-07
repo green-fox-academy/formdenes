@@ -23,3 +23,7 @@ console.log(fleet.things.sort(function (a: Thing , b: Thing): number {
 
 
 fleet.print();
+
+for (let todo of fleet.things) {
+  todo.printAllFields();
+}

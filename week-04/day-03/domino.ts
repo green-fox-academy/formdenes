@@ -1,8 +1,11 @@
 interface Comparable {
     compareTo(other: Comparable): number;
 }
+interface Printable{
+    printAllFields();
+  }
 
-class Domino implements Comparable {
+class Domino implements Comparable, Printable {
     values: number[];
     constructor(valueA: number, valueB: number) {
         this.values = [valueA, valueB];
@@ -15,6 +18,9 @@ class Domino implements Comparable {
             return 1;
         }
         else return 0;
+    }
+    printAllFields(){
+        console.log(`${this.values[0]}, ${this.values[1]}`);
     }
 }
 
