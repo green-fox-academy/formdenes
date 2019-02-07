@@ -2,6 +2,6 @@
 
 export class Sum{
   getSum(a:number[]){
-    return a.reduce((a:number, b:number) => a+b);
+    return a.reduce((a:number, b:number) => a+b, null);
   }
 }
