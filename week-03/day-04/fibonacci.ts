@@ -1,6 +1,6 @@
 'use strict'
 
-function fibonacci(n:number){
+export function fibonacci(n:number){
     if (n<1){
         return 0;
     }
