@@ -43,8 +43,8 @@ test('is vowel: í', function (t: any): any {
   t.end();
 });
 
-test("is vowel: u", function(t: any): any {
-  t.notOk(isVowel("u"));
+test("is vowel: 9", function(t: any): any {
+  t.notOk(isVowel("9"));
   t.end();
 });
 
