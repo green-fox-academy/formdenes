@@ -9,7 +9,6 @@ const fs = require('fs');
 export class TodoApp{
   private text:string;
   private todos:string[];
-  private command:string;
   private path:string;
   private errorType: {[k:string]: string} = {};
   private errorMsg: {[k:string]: string} = {};
@@ -58,7 +57,7 @@ export class TodoApp{
   init(){
     this.setText(this.path);
     this.setupTodos();
-    return this.command = readLineSync.question(this.msg.init);
+    return readLineSync.question(this.msg.init);
   }
 
   help () {
