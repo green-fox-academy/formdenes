@@ -20,7 +20,7 @@ export const actions = (path:string) => {
     },
     list(){
       console.log(msg.divider);
-      fileHandeler.getTodos.length !== 0? fileHandeler.printTodos() : console.log(msg.emptyList);
+      fileHandeler.getTodos().length !== 0? fileHandeler.printTodos() : console.log(msg.emptyList);
       console.log(msg.divider);
     },
     add(){

@@ -1,15 +1,18 @@
 'use strict';
-import {TodoApp} from './todo-class';
+import {actions} from './todo-actions';
+import {questions} from './todo-questions';
 
 const readLineSync = require('readline-sync');
 const fs = require('fs');
 
 const path:string = './list-of-todos.txt';
 
-const todoApp = new TodoApp(path);
+const todoApp = actions(path);
+const questioner = questions();
+let running:boolean = true;
 
-while(todoApp.running){
-  switch (todoApp.init()){
+while(running){
+  switch (questioner.getCommandFromQuestion()){
     case '': {
       todoApp.help();
       break;
@@ -26,17 +29,17 @@ while(todoApp.running){
     }
     case '-r':
     case 'remove':{
-      todoApp.remove();
+      todoApp.edit('remove');
       break;
     }
     case '-c':
     case 'check':{
-      todoApp.check();
+      todoApp.edit('check');
       break;
     }
     case '-e':
     case 'exit':{
-      todoApp.exit();
+      running = todoApp.exit();
       break;
     }
     default: {

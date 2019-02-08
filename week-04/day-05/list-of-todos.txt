@@ -1,4 +1,3 @@
 [x] Add checkboxes
-[ ] Adding long command formats
+[x] Adding long command formats
 [x] adding additional commands
-[x] asd;flkasd;lf

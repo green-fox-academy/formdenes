@@ -3,6 +3,11 @@
 import {errorType} from './error-types';
 import {errorMsg} from './error-msg';
 import {msg} from './msg';
+import {fileHandeling} from './todo-file-handeling';
+
+const path:string = './list-of-todos.txt'
+
+const fileHanderler = fileHandeling(path);
 
 const readLineSync = require('readline-sync');
 
@@ -10,7 +15,7 @@ export const questions = () => {
     return {
     getIndexFromQuestion(type:string): number{
       let item:number = Number(readLineSync.question(msg[type]));
-      if (item>todos.length){
+      if (item>fileHanderler.getTodos().length){
         console.log(errorType[type] + errorMsg.outOfBound);
         return 0;
       }
