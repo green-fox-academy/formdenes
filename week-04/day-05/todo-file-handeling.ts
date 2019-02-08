@@ -11,9 +11,6 @@ export const fileHandeling = (path: string) => {
     },
     getTodos(): string[] {
       return todos;
-    },
-    printTodos(): void{
-      todos.forEach((v, i) => console.log(`(${i+1}) - ${v}`));
     }
   }
 }

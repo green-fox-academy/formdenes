@@ -7,25 +7,21 @@ import {fileHandeling} from './todo-file-handeling';
 
 const path:string = './list-of-todos.txt'
 
-const fileHanderler = fileHandeling(path);
-
 const readLineSync = require('readline-sync');
 
 export const questions = () => {
+  let fileHanderler = fileHandeling(path);
     return {
-    getIndexFromQuestion(type:string): number{
+    getIndexFromQuestion(type:string){
       let item:number = Number(readLineSync.question(msg[type]));
       if (item>fileHanderler.getTodos().length){
-        console.log(errorType[type] + errorMsg.outOfBound);
-        return 0;
+        return (errorType[type] + errorMsg.outOfBound);
       }
       else if(item === 0){
-        console.log(errorType[type] + errorMsg.noIndex);
-        return 0;
+        return errorType[type] + errorMsg.noIndex;
       }
       else if(isNaN(item)){
-        console.log(errorType[type] + errorMsg.notANumber);
-        return 0;
+        return errorType[type] + errorMsg.notANumber;
       }
       else return item;
     },

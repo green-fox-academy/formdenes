@@ -1,40 +1,39 @@
 'use strict';
 import {actions} from './todo-actions';
 import {questions} from './todo-questions';
-
-const readLineSync = require('readline-sync');
-const fs = require('fs');
+import {print} from './todo-print';
 
 const path:string = './list-of-todos.txt';
 
-const todoApp = actions(path);
-const questioner = questions();
 let running:boolean = true;
 
 while(running){
+  let todoApp = actions(path);
+  let questioner = questions();
+  let printer = print();
   switch (questioner.getCommandFromQuestion()){
     case '': {
-      todoApp.help();
+      printer.printAction(todoApp.help());
       break;
     }
     case '-l':
     case 'list':{
-      todoApp.list();
+      printer.printAction(todoApp.list());
       break;
     }
     case '-a':
     case 'add':{
-      todoApp.add();
+      printer.printAction(todoApp.add());
       break;
     }
     case '-r':
     case 'remove':{
-      todoApp.edit('remove');
+      printer.printAction(todoApp.edit('remove'));
       break;
     }
     case '-c':
     case 'check':{
-      todoApp.edit('check');
+      printer.printAction(todoApp.edit('check'));
       break;
     }
     case '-e':
@@ -43,7 +42,7 @@ while(running){
       break;
     }
     default: {
-      todoApp.def();
+      printer.printAction(todoApp.def());
     }
   }
 }
