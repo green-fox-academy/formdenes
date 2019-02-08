@@ -1,4 +1,4 @@
 [x] Add checkboxes
 [ ] Adding long command formats
 [x] adding additional commands
-[ ] GFA
+[x] asd;flkasd;lf
