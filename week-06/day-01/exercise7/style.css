@@ -42,12 +42,14 @@ p{
 
 .row{
   display: flex;
+  justify-content: space-between;
   width: 100%;
 }
 
 .picture-container{
   background-color: rgb(200, 246, 147);
   margin: 10px 10px;
+  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,15 +58,15 @@ p{
 
 .picture{
   background-color: brown;
-  width: 40px;
-  height: 20px;
+  flex-basis: 100px;
+  height: 200px;
 }
 
 .article{
   background-color: rgb(141, 194, 81);
   margin: 10px;
-  flex-basis: 100px;
   flex-grow: 2;
+  flex-basis: 100px;
   padding: 10px;
   height: auto;
 }
