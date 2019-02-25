@@ -1,0 +1,45 @@
+body{
+  width: 600px;
+  margin: 20px auto;
+  height: 700px;
+}
+
+.header{
+  background-color: rgb(197, 126, 219);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px; 
+}
+
+.nav-links{
+  padding-right: 30px;
+  position: relative;
+  left: 20px;
+}
+
+.nav-links a{
+  background-color: rgb(126, 219, 204);
+  box-sizing: conent-box;
+  padding: 0px 5px;
+}
+
+.content{
+  display: flex;
+  widows: 100%;
+  height: 100%;
+}
+
+.main-content{
+  background-color: rgb(246, 220, 147);
+  width: 100%;
+  height: 100%;
+
+}
+
+.sidebar{
+  background-color: rgb(126, 219, 172);
+  width: 200px;
+  height: 100%;
+}
