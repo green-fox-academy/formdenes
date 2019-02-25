@@ -1,0 +1,19 @@
+
+.outter {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 100px;
+  height: 100px;
+}
+.yellow {
+  background-color: rgb(246, 220, 147);
+}
+.purple {
+  background-color: rgb(197, 126, 219);
+}
