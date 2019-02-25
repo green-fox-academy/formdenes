@@ -1,6 +1,5 @@
 body{
-  width: 600px;
-  margin: 20px auto;
+  margin: 0;
   height: 700px;
 }
 
@@ -11,6 +10,9 @@ body{
   align-items: center;
   width: 100%;
   height: 50px; 
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .nav-links{
@@ -22,19 +24,27 @@ body{
 .nav-links a{
   background-color: rgb(126, 219, 204);
   box-sizing: conent-box;
-  padding: 0px 5px;
+  padding: 0px 10px;
+}
+
+.page{
+  width: 600px;
+  margin: 0px auto;
 }
 
 .content{
+  margin: 0px auto;
+  margin-top: 60px;
   display: flex;
   widows: 100%;
   height: 100%;
+  width: 100%
 }
 
 .main-content{
   background-color: rgb(246, 220, 147);
   width: 100%;
-  height: 100%;
+  height: 600px;
 
 }
 
@@ -42,4 +52,13 @@ body{
   background-color: rgb(126, 219, 172);
   width: 200px;
   height: 100%;
+  order: -1;
+  margin-right: 10px;
+  height: 600px;
+}
+.footer{
+  margin-top: 10px;
+  background-color: rgb(180, 180, 180);
+  height: 50px;
+  width: 100%;
 }
