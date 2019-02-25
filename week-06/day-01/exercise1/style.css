@@ -8,10 +8,13 @@
 
 .green {
   background-color: rgb(126, 219, 172);
+  flex-grow: 1;
 }
 .yellow {
   background-color: rgb(246, 220, 147);
+  flex-grow: 2;
 }
 .purple {
   background-color: rgb(197, 126, 219);
+  flex-grow: 1;
 }
