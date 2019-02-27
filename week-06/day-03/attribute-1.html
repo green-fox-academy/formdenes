@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: Attributes</title>
+  </head>
+  <body>
+
+    <img src="https://static.wixstatic.com/media/f4461b_83457ca5dd844c71a760d36e6583d0ff.png/v1/fill/w_168,h_168,al_c,usm_0.66_1.00_0.01/f4461b_83457ca5dd844c71a760d36e6583d0ff.png">
+    <a href="http://www.themostamazingwebsiteontheinternet.com/">The Best Website Ever</a>
+    <button>Click me!</button>
+    <button class="this-one">Click me!</button>
+
+    <script>
+      let img = document.querySelector('img');
+      console.log(img.src);
+      img.src = 'https://nationalzoo.si.edu/sites/default/files/styles/480x240_scale_and_crop/public/animals/screaminghairyarmadillo-003.jpg?itok=d7jC7NNl';
+      document.querySelector('a').href = 'https://www.greenfoxacademy.com/';
+      let buttons = document.querySelectorAll('button');
+      buttons[1].textContent = 'Don\'t click me!';
+      buttons[1].disabled = true;
+    </script>
+  </body>
+</html>
