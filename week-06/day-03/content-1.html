@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+</head>
+
+<body>
+  <p class="apple">apple</p>
+  <p class="balloon">banana</p>
+  <p class="cat">car</p>
+  <p class="animals">goat rabbit <strong>cat</strong> dog</p>
+
+  <script>
+    let paragraphs = document.querySelectorAll('p');
+    paragraphs.forEach(v => v.innerHTML+=' ' + paragraphs[paragraphs.length - 1].innerHTML);
+  </script>
+</body>
+
+</html>
