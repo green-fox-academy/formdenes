@@ -8,6 +8,7 @@ app.set('view engine', 'ejs');
 // home page
 app.get('/', (req, res) => {
   // render `home.ejs`
+  
   res.render('home', {query: req.query});
 });
 
