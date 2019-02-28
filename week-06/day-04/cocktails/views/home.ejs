@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>Cocktails</title>
+</head>
+
+<body>
+  <h1>Cocktails</h1>
+  <h2 class='alcohollist'><%=alcoholList.join(', ')%></h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%cocktails.forEach(v=>{%>
+      <tr>
+        <td class="name">
+          <div class="cocktail-title">
+            <h2>
+              <%=v.name%>
+            </h2>
+            <p>
+              <%= v.isAlcoholic? '': '(non-alcoholic)'%>
+            </p>
+          </div>
+          <p>
+            <%=v.contains.join(', ')%>
+          </p>
+        </td>
+        <td class='price'>
+          <h3>
+            <%=v.price%> Ft
+          </h3>
+        </td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+</body>
+
+</html>

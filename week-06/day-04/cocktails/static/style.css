@@ -1,0 +1,66 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  width: 900px;
+}
+
+h1{
+  font-family: Helvetica;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.alcohollist{
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+h2{
+  font-size: 23px;
+  font-weight: bold;
+  margin: 0;
+}
+
+h3{
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+}
+.price{
+  width: 200px;
+}
+
+.name{
+  width: 600px;
+}
+.cocktail-title{
+  display: flex;
+  align-items: center;
+}
+
+.cocktail-title h2{
+  margin-right: 20px;
+}
+
+tbody tr:nth-child(odd){
+  background-color: lightgray;
+}
+
+tbody tr:nth-child(even){
+  background-color: rgb(77, 72, 90);
+} 
+td{
+  padding: 0 20px;
+}
+td p{
+  margin: 0;
+}
+
+thead{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: 600px;
+}
