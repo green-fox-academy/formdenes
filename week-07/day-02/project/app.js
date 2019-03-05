@@ -6,6 +6,7 @@ const path = require('path');
 const app = express();
 const PORT = 8080;
 
+app.use(express.json());
 app.use('/assets', express.static('assets'));
 
 app.get('/', (req, res) => {
@@ -31,7 +32,32 @@ app.get('/greeter', (req, res) => {
 app.get('/appenda/:appendable', (req, res) => {
   res.json({'appended': `${req.params.appendable}a`});
 
-})
+});
+
+app.post('/dountil/:action', (req,res) => {
+  const n = typeof req.body.until == 'number'? req.body.until : 1;
+  const sum = n*(n+1)/2;
+  let f = 1;
+  for (let i = 2; i<=n; i++){
+    f = f*i;
+  };
+  console.log('Factorial', f);
+  typeof req.body.until == 'number'?
+  req.params.action == 'sum'?
+  res.json({
+    'result': sum
+  }):
+  req.params.action == 'factor'?
+  res.json({
+    'result': f
+  }):
+  res.json({'error': "Please provide a number!"}):
+  res.json({'error': "Please provide a number!"});
+});
+
+app.post('/arrays', (req, res) => {
+  
+});
 
 // start express app on port 3000
 app.listen(PORT, () => {
