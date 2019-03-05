@@ -6,6 +6,40 @@ const path = require('path');
 const app = express();
 const PORT = 8080;
 
+const swap = (arr, i) => {
+  
+  const temp = i==1? arr[i-1].toLowerCase(): arr[i-1];
+  arr[i-1] = i == 1? arr[i].charAt(0).toUpperCase() + arr[i].slice(1):arr[i];
+  arr[i] = temp;
+}
+
+const irandom = (i, zero = true) => {
+  return zero? Math.floor(Math.random()*i):1+Math.floor(Math.random()* (i));
+}
+
+const pushRandomThing = (arr) => {
+  const randomThings = [
+    'Arrgh.',
+    'Uhmm.',
+    'Err..err..err.'
+  ]
+  for (let i = 0; i < irandom(2, false);i++){
+    arr.push(randomThings[irandom(3)]);
+  }
+}
+
+const yodafy = (text) => {
+  let finalText = '';
+  let sentences = text.split('. ');
+  let words = sentences.map(v => v.split(' '));
+  words = words.map(v => v.map(val => val.replace('.','')));
+ words.forEach((sentences, sindex) => sentences.forEach((word, i, arr) => i%2 == 1? swap(words[sindex], i):null));
+ words.forEach((sentences, sindex) => sentences.forEach((word, i, arr) => i == arr.length-1? words[sindex][i] = words[sindex][i] + '.': null));
+ words.forEach((sentences, sindex) => pushRandomThing(words[sindex]));
+ finalText = words.map(v => v.join(' ')).join(' ');
+  return finalText;
+}
+
 app.use(express.json());
 app.use('/assets', express.static('assets'));
 
@@ -68,6 +102,14 @@ app.post('/arrays', (req, res) => {
   req.body.what == 'double'?
   res.json({'result': req.body.numbers.map(v=> v*2)}):
   res.json({"error": "Please provide what to do and with the numbers!"});
+});
+
+app.post('/sith', (req, res) => {
+  let text = 'text' in req.body? req.body.text: '';
+  text == ''?
+  res.json({"error": "Feed me some text you have to, padawan young you are. Hmmm."}):
+  res.json({'sith_text': yodafy(text)});
+
 });
 
 // start express app on port 3000
