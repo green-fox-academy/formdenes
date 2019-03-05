@@ -28,7 +28,10 @@ app.get('/greeter', (req, res) => {
   res.json({"error": `Please provide a name and a title!`});
 });
 
-app.get('/appenda', )
+app.get('/appenda/:appendable', (req, res) => {
+  res.json({'appended': `${req.params.appendable}a`});
+
+})
 
 // start express app on port 3000
 app.listen(PORT, () => {
