@@ -41,7 +41,6 @@ app.post('/dountil/:action', (req,res) => {
   for (let i = 2; i<=n; i++){
     f = f*i;
   };
-  console.log('Factorial', f);
   typeof req.body.until == 'number'?
   req.params.action == 'sum'?
   res.json({
@@ -56,7 +55,19 @@ app.post('/dountil/:action', (req,res) => {
 });
 
 app.post('/arrays', (req, res) => {
-  
+  !('what' in req.body) && !('numbers' in req.body)?
+  res.json({"error": "Please provide what to do and with what numbers!"}):
+  !('what' in req.body)?
+  res.json({"error": "Please provide what to do and with the numbers!"}):
+  !('numbers' in req.body)?
+  res.json({"error": "Please provide some numbers!"}):
+  req.body.what == 'sum'?
+  res.json({'result': req.body.numbers.reduce((a,b)=> a+b)}):
+  req.body.what == 'multiply'?
+  res.json({'result': req.body.numbers.reduce((a,b)=> a*b)}):
+  req.body.what == 'double'?
+  res.json({'result': req.body.numbers.map(v=> v*2)}):
+  res.json({"error": "Please provide what to do and with the numbers!"});
 });
 
 // start express app on port 3000
