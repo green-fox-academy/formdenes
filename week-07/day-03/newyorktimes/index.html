@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>NewYorkTimes Articles</title>
+</head>
+<body>
+<div class="container">
+<!--   <img src='https://media3.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif' alt="Nod gif">
+  <img src='https://media0.giphy.com/media/l2JJs57WKffxtMBFe/giphy.gif' alt="Nod gif2"> -->
+</div>
+</body>
+<script>
+  const Http = new XMLHttpRequest();
+  let data = {};
+  let gifs = [];
+  const container = document.querySelector('.container');
+  Http.open('GET', 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=moon landing apollo11&api-key=H8TnoRqW0oQLLaGJkGJHoyXXEtbp4FdL');
+  Http.send();
+
+  Http.onreadystatechange = (e) => {
+    if (Http.readyState == 4){
+    data = JSON.parse(Http.response).response.docs;
+    console.log('data on readystate', data);
+    data.forEach((v,i) => {
+      let ul = document.createElement('ul');
+      let headline = document.createElement('li');
+      let snippet = document.createElement('li');
+      let publicDate = document.createElement('li');
+      let link = document.createElement('a');
+
+      link.textContent = v.headline.main;
+      link.href = v.web_url;
+      snippet.textContent = v.snippet;
+      publicDate.textContent = v.pub_date;
+      headline.appendChild(link);
+      ul.appendChild(headline);
+      ul.appendChild(snippet);
+      ul.appendChild(publicDate);
+      container.appendChild(ul);
+    
+    });
+  }
+  }
+  console.log('data',data);
+  //headline
+  //snipet
+  //publication date
+  
+  
+</script>
+</html>
