@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Giphy</title>
+    <style>
+      img{
+        margin: 20px;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+<!--   <img src='https://media3.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif' alt="Nod gif">
+  <img src='https://media0.giphy.com/media/l2JJs57WKffxtMBFe/giphy.gif' alt="Nod gif2"> -->
+</div>
+</body>
+<script>
+  const Http = new XMLHttpRequest();
+  let data = {};
+  let gifs = [];
+  const container = document.querySelector('.container');
+  Http.open('GET', 'http:/api.giphy.com/v1/gifs/search?api_key=OqimluSRBD0JAaVloOGTgVTPrMibxMFu&q=fail&limit=16');
+  Http.send();
+
+  const playGif = () => {
+    const img = event.target;
+    let url = img.src;
+    
+    urlArr = url.split('');
+    urlArr.splice(urlArr.length-10,6,'giphy');
+    url = urlArr.join('');
+    img.src = url;
+  }
+  const stopGif = () => {
+    setTimeout(() =>{
+      let url = img.src;
+    
+    urlArr = url.split('');
+    urlArr.splice(urlArr.length-9,5,'200w_s');
+    url = urlArr.join('');
+    img.src = url;
+    })
+    const img = event.target;
+    
+  }
+
+  const createGifs = () => {
+    for (i = 0; i<16; i++){
+      let gif = document.createElement('img');
+      
+      gif.src = data[i].images['fixed_width_still'].url;
+      gif.onmouseover = playGif;
+      gif.onmouseleave = stopGif;
+      container.appendChild(gif);
+    }
+  }
+
+  Http.onreadystatechange = (e) => {
+    data = JSON.parse(Http.response).data;
+    console.log('data on readystate', data);
+    createGifs();    
+    gifs = document.querySelectorAll('img');
+    
+  }
+  console.log('data',data);
+  
+  
+</script>
+</html>
