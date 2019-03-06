@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bomb defuse</title>
+</head>
+<body>
+  <div class="display">10</div>
+  <button>Defuse</button>
+</body>
+  <script>
+    let exploded = false;
+    let remainingTime = 10;
+    const disp = document.querySelector('.display');
+    const exploding = () => {
+      disp.textContent = 'Bomb exploded';
+      clearInterval(countDownTimer);
+      exploded = true;
+    }
+    const countDown = () => {
+      remainingTime--;
+      disp.textContent = remainingTime;
+    }
+    const explodeTimer = setTimeout(exploding, 10000);
+    const countDownTimer = setInterval(countDown, 1000)
+    const btn = document.querySelector('button');
+    btn.onclick = ()=> {
+      if (exploded) {return};
+      clearInterval(countDownTimer);
+      disp.textContent = 'Bomb defused';
+      clearTimeout(explodeTimer);
+    }
+  </script>
+</html>
