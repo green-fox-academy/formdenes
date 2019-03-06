@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prime squares</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: arial;
+    }
+
+    section {
+      display: grid;
+      grid-auto-rows: 50px;
+      grid-template-columns: repeat(10, 1fr);
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    section div {
+      box-shadow: 0px 0px 10px #666 inset;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .not-prime {
+      background: tomato;
+    }
+
+    .prime {
+      background: limegreen;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div>1</div>
+  </section>
+
+  <script>
+    const section = document.querySelector('section');
+    for (let i = 1; i< 100; i++){
+      let div = document.createElement('div');
+      div.textContent = i+1;
+      section.appendChild(div);
+    }
+    const primeValidator = () => {
+      const divs = document.querySelectorAll('div');
+      const primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
+      primes.indexOf(index+1) == -1? divs[index].classList.add('not-prime') : divs[index].classList.add('prime');
+      index++;
+      index >= 100? clearInterval(interval):null;
+    }
+    let index = 0;
+    const interval = setInterval(primeValidator,100);
+  </script>
+</body>
+
+</html>
