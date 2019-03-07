@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>All the books</title>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Author(s)</td>
+        <td>Category</td>
+        <td>Publisher(s)</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%books.forEach(v=>{%>
+      <tr>
+        <td class="name">
+          <%=v.book_name%>
+        </td>
+        <td class="name">
+          <%=v.aut_name%>
+        </td>
+        <td class="name">
+          <%=v.cate_descrip%>
+        </td>
+        <td class="name">
+          <%=v.pub_name%>
+        </td>
+        <td class="name">
+          <%=v.book_price%>
+        </td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+</body>
+
+</html>
