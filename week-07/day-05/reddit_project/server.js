@@ -54,19 +54,20 @@ app.get('/posts',(req,res) => {
 });
 
 app.post('/posts', (req,res) => {
-  /* console.log(req.headers.username? true:false);
-  res.json(req.headers); */
-  //res.json(req.body);
-  let SQL = `INSERT INTO posts (title, url) VALUES ("${req.body.title}", "${req.body.url}");`;
-  //${req.headers.username? req.headers.username: ''});`;
+  console.log(req.headers.username? req.headers.username: NULL);
+  
+  let SQL = `INSERT INTO posts (title, url, user_id) VALUES ("${req.body.title}", "${req.body.url}",(SELECT user_id FROM users WHERE user_name="${req.headers.username? req.headers.username: NULL}"));`;
+console.log(SQL);
 
   conn.query(SQL, (err, rows) => {
       if (err) {
         console.error(err);
         res.status(500).send();
         return;
-      }
-      console.log('inserted');
+    }
+    let insertId = rows.insertId;
+
+     
       
     SQL = `SELECT
     post_id AS id,
@@ -78,7 +79,7 @@ app.post('/posts', (req,res) => {
     FROM posts p
     LEFT JOIN users u
     ON p.user_id = u.user_id
-    WHERE post_id=${rows.insertId};`;      
+    WHERE post_id=${insertId};`;      
     conn.query(SQL, (err, rows) => {
       if (err) {
         console.error(err);
