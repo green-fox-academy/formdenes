@@ -54,10 +54,10 @@ app.get('/posts',(req,res) => {
 });
 
 app.post('/posts', (req,res) => {
-  console.log(req.headers.username? req.headers.username: NULL);
+  //console.log(req.headers.username? req.headers.username: NULL);
   
   let SQL = `INSERT INTO posts (title, url, user_id) VALUES ("${req.body.title}", "${req.body.url}",(SELECT user_id FROM users WHERE user_name="${req.headers.username? req.headers.username: NULL}"));`;
-console.log(SQL);
+//console.log(SQL);
 
   conn.query(SQL, (err, rows) => {
       if (err) {
@@ -65,10 +65,7 @@ console.log(SQL);
         res.status(500).send();
         return;
     }
-    let insertId = rows.insertId;
-
-     
-      
+    let insertId = rows.insertId;      
     SQL = `SELECT
     post_id AS id,
     title,
@@ -88,6 +85,117 @@ console.log(SQL);
       };        
       res.json(rows[0]);      
     });
+  });
+});
+
+app.put('/posts/:id/upvote', (req, res) => {
+  //console.log(req.params.id);
+  
+  const postId = req.params.id;
+  const userName = req.headers.username? req.headers.username: NULL;
+  let SQL = `UPDATE posts SET upvotes = upvotes+1 WHERE post_id = ${postId};`;
+  conn.query(SQL, (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send();
+      return;
+    }
+    let insertId = rows.insertId;
+    SQL = `SELECT
+    post_id AS id,
+    title,
+    url,
+    date AS timestamp,
+    score,
+    user_name AS owner
+    FROM posts
+    LEFT JOIN users
+    ON user_name = '${userName}'
+    WHERE post_id = ${postId};
+    `;      
+    conn.query(SQL, (err, rows) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send();
+        return;
+      };        
+      res.json(rows[0]);      
+    });
+  });
+});
+
+app.put('/posts/:id/downvote', (req, res) => {
+  //console.log(req.params.id);
+  
+  const postId = req.params.id;
+  const userName = req.headers.username? req.headers.username: NULL;
+  let SQL = `UPDATE posts SET downvotes = downvotes+1 WHERE post_id = ${postId};`;
+  conn.query(SQL, (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send();
+      return;
+    }
+    let insertId = rows.insertId;
+    SQL = `SELECT
+    post_id AS id,
+    title,
+    url,
+    date AS timestamp,
+    score,
+    user_name AS owner
+    FROM posts
+    LEFT JOIN users
+    ON user_name = '${userName}'
+    WHERE post_id = ${postId};
+    `;      
+    conn.query(SQL, (err, rows) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send();
+        return;
+      };        
+      res.json(rows[0]);      
+    });
+  });
+});
+
+app.delete('/posts/:id', (req, res) => {
+  //console.log(req.params.id);
+  
+  const postId = req.params.id;
+  const userName = req.headers.username? req.headers.username: NULL;
+  let deletedPost = {};
+  SQL = `SELECT
+    post_id AS id,
+    title,
+    url,
+    date AS timestamp,
+    score,
+    user_name AS owner
+    FROM posts
+    LEFT JOIN users
+    ON user_name = '${userName}'
+    WHERE post_id = ${postId};
+    `;      
+    conn.query(SQL, (err, rows) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send();
+        return;
+      };        
+      res.json(rows[0]);      
+    });
+
+  let SQL = `UPDATE posts SET downvotes = downvotes+1 WHERE post_id = ${postId};`;
+  conn.query(SQL, (err, rows) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send();
+      return;
+    }
+    let insertId = rows.insertId;
+    
   });
 });
 
