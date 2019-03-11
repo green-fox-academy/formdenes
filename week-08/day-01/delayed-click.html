@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+  </head>
+  <body>
+    <button>Click me</button>
+
+    <p class="response"></p>
+    <script>
+     /*  Create a simple HTML document with one button. If the user clicks the button it should wait 2 seconds and it should show a text under the button: 2 seconds ellapsed */
+    const button = document.querySelector('button');
+    const response = document.querySelector('.response');
+    const twoSecondEllapsed = () => {
+      response.textContent = '2 seconds ellapsed';
+    }
+
+    button.onclick = (e) => {
+      response.textContent = '';
+      setTimeout(twoSecondEllapsed, 2000);
+    }
+    </script>
+  </body>
+</html>
