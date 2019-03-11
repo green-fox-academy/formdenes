@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        text-align: center;
+      }
+      button {
+        margin: 16px;
+      }
+      .img-inspector {
+        margin: 0 auto;
+        width: 500px;
+        height: 320px;
+        border: 1px solid #3a3a3a;
+        background-image: url("./mp.jpg");
+        background-size: 200%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button data-action="move" data-direction="up">Up</button>
+      <button data-action="move" data-direction="down">Down</button>
+      <button data-action="move" data-direction="left">Left</button>
+      <button data-action="move" data-direction="right">Right</button>
+      <button data-action="zoom" data-direction="in">Zoom in</button>
+      <button data-action="zoom" data-direction="out">Zoom out</button>
+    </nav>
+    <div class="img-inspector">
+    </div>
+    <script>
+      /* Here is an image inspector, but the buttons are not implemented yet, that will
+      be your task!
+       - the nav buttons (up, down, left, right) move the background by 10px
+       - the zoom buttons increase/decrease the image by 20%
+       - attach only two event listeners to the nav element
+         - one for navigation
+         - one for zooming */
+      const nav = document.querySelector('nav');
+      const inspector = document.querySelector('.img-inspector');
+
+      const addingPixel = (original, increment) => {
+        let origVal = parseFloat(original);
+        let newVal = origVal + increment;
+        return `${newVal}px`;
+      }
+      const addingPrecet = (original, increment) => {
+        let origVal = parseFloat(original);
+        let newVal = origVal + increment;
+        return `${newVal}%`;
+      }
+      const substractPrecet = (original, decrement) => {
+        let origVal = parseFloat(original);
+        let newVal = origVal - decrement;
+        return `${newVal}%`;
+      }
+      
+      const move = (e) => {
+        let posX = inspector.style.backgroundPositionX;
+        let posY = inspector.style.backgroundPositionY;
+        posX = posX == ''? '0px':posX;
+        posY = posY == ''? '0px':posY;
+        
+        
+        
+        switch (e.target.dataset.direction){
+          case 'up':
+          posY = addingPixel(posY, -10);
+          break;
+          case 'down':
+          posY = addingPixel(posY, 10);
+          console.log('down');
+          break;
+          case 'left':
+          posX = addingPixel(posX, -10);
+          console.log('letf');
+          break;
+          case 'right':
+          posX = addingPixel(posX, 10);
+          console.log('right');
+          break;
+        }
+        inspector.style.backgroundPositionX = posX;
+        inspector.style.backgroundPositionY = posY;
+      } 
+      const zoom = (e) => {
+        e.target.dataset.direction == 'in'?
+        (inspector.style.backgroundSize == ''? inspector.style.backgroundSize = '200%':null ,inspector.style.backgroundSize = addingPrecet(inspector.style.backgroundSize, 20)):
+        (inspector.style.backgroundSize == ''? inspector.style.backgroundSize = '200%':null ,inspector.style.backgroundSize = substractPrecet(inspector.style.backgroundSize, 20));      
+      }
+
+      nav.onclick = (e) => {
+        e.target.dataset.action == 'move'?
+        move(e):
+        zoom(e);
+      }
+    </script>
+  </body>
+</html>
