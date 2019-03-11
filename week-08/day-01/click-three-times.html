@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+  </head>
+  <body>
+    <button>Click me</button>
+
+    <p class="response"></p>
+    <script>
+     /*  Create a simple HTML document with one button.
+
+          If the user clicks the button 3 times, and 5 seconds is already elapsed since the page is loaded, a text should appear under the button:
+          5 seconds elapsed and clicked 3 times
+          If the user starts clicking before the first 5 seconds, nothing should be printed */
+    const button = document.querySelector('button');
+    const response = document.querySelector('.response');
+    let clicks = 0;
+    let timePassed = false;
+    let tooFast = false;
+    setInterval(() => {timePassed = true;}, 5000);
+    button.onclick = (e) => {
+      clicks++;
+      tooFast = timePassed? false:true;
+      timePassed? clicks >2 && !tooFast? response.textContent = '5 seconds elapsed and clicked 3 times':null:null;
+    }
+    </script>
+  </body>
+</html>
