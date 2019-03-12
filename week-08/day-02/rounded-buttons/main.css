@@ -1,0 +1,59 @@
+body{
+  margin: 20px auto;
+  width: 80%;
+  background-color: rgb(55, 49, 82);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button{
+  border-radius: 7px;
+  border-style: none;
+  width: 200px;
+  margin: 20px 30px;
+  padding: 15px 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 100;
+  color: rgb(222, 229, 235);
+}
+
+.blue {
+  background: linear-gradient( rgb(76, 126, 207) -20%,#35578E 80%);
+  box-shadow: 0 7px rgb(38, 65, 109);
+  border-top: 1px solid  rgb(120, 168, 245);
+}
+.green {
+  background: linear-gradient( rgb(108, 238, 136) -20%,rgb(52, 165, 71) 80%);
+  box-shadow: 0 7px rgb(38, 109, 38);
+  border-top: 1px solid  rgb(201, 252, 159);
+}
+.red {
+  background: linear-gradient( rgb(238, 117, 108) -20%,rgb(165, 69, 52) 80%);
+  box-shadow: 0 7px rgb(109, 38, 38);
+  border-top: 1px solid  rgb(255, 197, 174);
+}
+.light {
+  background: linear-gradient( rgb(108, 208, 238) -20%,rgb(89, 177, 218) 80%);
+  box-shadow: 0 7px rgb(38, 92, 109);
+  border-top: 1px solid  rgb(174, 248, 255);
+}
+.black {
+  background: linear-gradient( rgb(58, 58, 58) -20%,rgb(27, 27, 27) 30%);
+  box-shadow: 0 7px rgb(20, 20, 20);
+  border-top: 1px solid  rgb(117, 117, 117);
+}
+.white {
+  color: black;
+  background: linear-gradient( rgb(234, 242, 248) -20%,rgb(214, 224, 231) 80%);
+  box-shadow: 0 7px rgb(156, 165, 187);
+  border-top: 1px solid  rgb(255, 255, 255);
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  filter: brightness(90%);
+}
