@@ -9,21 +9,30 @@
   </style>
   <meta charset="UTF-8">
   <title>Candy shop</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
   <h1>🍬Candy shop🍬</h1>
-  <dl class="stats">
-    <dt>Candies</dt>
-    <dd class="candies">0</dd>
-    <dt>Lollypops</dt>
-    <dd class="lollypops">🍭🍭🍭</dd>
-    <dt>Candies / Second</dt>
-    <dd class="speed">0</dd>
-  </dl>
-  <button class="create-candies">Create candies</button>
-  <button class="buy-lollypops">Buy Lollypops</button>
-  <button class="candy-machine">Make candy rain</button>
+  <div class="game">
+    <div class="game-field">
+      <dl class="stats">
+        <dt>Candies</dt>
+        <dd class="candies">0</dd>
+        <dt>Lollypops</dt>
+        <dd class="lollypops">🍭🍭🍭</dd>
+        <dt>Candies / Second</dt>
+        <dd class="speed">0</dd>
+      </dl>
+    </div>
+    <div class="buttons">
+      <button class="create-candies">🍬</button>
+      <button class="buy-lollypops"> 🍭</button>
+      <button class="candy-machine">MORE</button>
+      <button class="candy-machine">less</button>
+    </div>
+  </div>
+
   <script src="game.js"></script>
 </body>
 

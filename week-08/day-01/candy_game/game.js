@@ -16,6 +16,14 @@ let numberOfCandies = 0;
 let numberOfLollipops = 0;
 let productionRate = Math.floor(numberOfLollipops/10);
 
+const getCandieText = () => {
+  let text = '';
+  for(let i = 0; i<numberOfCandies; i++){
+    text += '🍬';
+  }
+  return text;
+}
+
 const getLollypopText = () => {
   let text = '';
   for(let i = 0; i<numberOfLollipops; i++){
@@ -26,14 +34,14 @@ const getLollypopText = () => {
 
 const giveCandy = () => {
   numberOfCandies+= 1*multiplyer;
-  candies.textContent = numberOfCandies;
+  candies.textContent = getCandieText();
 }
 
 const buyLollypop = () => {
   numberOfCandies>=lollypopPrice?
   (numberOfCandies-=lollypopPrice,
   numberOfLollipops++,
-  candies.textContent = numberOfCandies)
+  candies.textContent = getCandieText())
   :
   null;
   lollipops.textContent = getLollypopText();
@@ -49,8 +57,8 @@ setInterval(() => {
   }
 },1000);
 
-candies.textContent = numberOfCandies;
-lollipops.textContent = numberOfLollipops;
+candies.textContent = getCandieText();
+lollipops.textContent = getLollypopText();
 speed.textContent = productionRate;
 
 createCandies.onclick = giveCandy;
