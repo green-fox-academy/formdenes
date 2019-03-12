@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <title>Cocktails</title>
+</head>
+
+<body>
+  <div class="view">
+    <button></button>
+    <div class="big-picture">
+      <div class="description">
+        <h2>Caption</h2>
+        <p>This is some description</p>
+      </div>
+    </div>
+  </div>
+  <div class="photo-stream">
+    <div class="small-picture">
+      <%imageLinks.forEach(v=>{%>
+        <img src=<%=v%> alt="">
+      <%})%>
+    <!-- Some ejs lines here -->
+    </div>
+  </div>
+</body>
+
+</html>

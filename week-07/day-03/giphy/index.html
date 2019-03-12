@@ -56,14 +56,15 @@
     }
   }
 
-  Http.onreadystatechange = (e) => {
+  Http.onload = () => {
+
     data = JSON.parse(Http.response).data;
-    console.log('data on readystate', data);
+    //console.log('data on readystate', data);
     createGifs();    
     gifs = document.querySelectorAll('img');
     
   }
-  console.log('data',data);
+  //console.log('data',data);
   
   
 </script>

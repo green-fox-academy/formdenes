@@ -12,6 +12,14 @@ const mapWith = (array, callback) => {
   return output;
 }
 
+function MapWith (array, callback) {
+  let output = [];
+  array.forEach(function (value) {
+    output.push(callback(value))
+  });
+  return output;
+}
+
 const addOne = (number) => {
   return number + 1;
 }
