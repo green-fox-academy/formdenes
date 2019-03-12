@@ -1,0 +1,37 @@
+body {
+  display: flex;
+}
+
+div {
+  height: 200px;
+}
+
+.green {
+  background-color: lightgreen;
+  width: 200px;
+}
+
+.yellow {
+  background-color: lightgoldenrodyellow;
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+
+.purple {
+  background-color: plum;
+  width: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+  .green {
+    flex-grow: 1;
+    width: 100%;
+  }
+  .purple {
+    flex-grow: 1;
+    width: 100%;
+  }
+}
