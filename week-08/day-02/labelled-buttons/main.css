@@ -30,6 +30,16 @@ button{
   
 }
 
+button:focus{
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(110%)
+}
+button:active {
+  filter: brightness(90%)
+}
 
 i{
   text-align: center;
@@ -58,7 +68,7 @@ i{
   z-index: -2;
   transition-property: opacity;
   transition-duration: .5s;
-  transition-delay: .5s;
+  transition-delay: .2s;
 }
 
 
