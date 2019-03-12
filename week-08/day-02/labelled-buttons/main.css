@@ -1,0 +1,98 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  background-color: rgb(43, 44, 53);
+  margin: 10px auto;
+}
+
+.buttons{
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-basis: 300px; */
+  display: block;
+  width: 300px;
+}
+
+button{
+  margin: 30px 0;
+  font-size: 36px;
+  padding: 2px;
+  width: auto;
+  background-color: rgba(0,0,0,0);
+  border-style: none;
+  display: flex;
+  transition-property: opacity;
+  transition-duration: .5s;
+  
+}
+
+
+i{
+  text-align: center;
+  padding: 5px;
+  color: white;
+}
+.icon-container{
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(22, 22, 29);
+  border-radius: 3px;
+}
+
+
+
+.label{
+  width: 150px;
+  color: white;
+  font-size: 32px;
+  font-weight: 50;
+  padding: 11px;
+  border-radius: 0 3px 3px 0;
+  z-index: -2;
+  transition-property: opacity;
+  transition-duration: .5s;
+  transition-delay: .5s;
+}
+
+
+
+.red{
+  color: rgb(216, 74, 74);
+}
+
+.green{
+  color: rgb(98, 177, 118);
+}
+
+.red-bg{
+  background-color: rgb(216, 74, 74);
+}
+
+.green-bg{
+  background-color: rgb(98, 177, 118);
+}
+
+.hide {
+  opacity: 0;
+  
+}
+
+.notch:after{
+  content: '';
+  position: relative;
+  right: 185px;
+  top: 4px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 25px solid rgb(22, 22, 29);
+  border-bottom: 25px solid transparent;
+  z-index: -1;
+}
