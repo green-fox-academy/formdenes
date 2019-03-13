@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Button disable</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+  <div class="form-field">
+    <h1>Please fill this form out!</h1>
+    <form action="/login" method="POST">
+      <h2>What is your favourite pet?</h2>
+      <div class="horizontal-radio pet">
+        <input type="radio" id="dog" name="pet" value="Dog" />
+        <label for="dog">Dog</label>
+        <input type="radio" id="cat" name="pet" value="Cat" />
+        <label for="cat">Cat</label>
+        <input type="radio" id="fish" name="pet" value="fish" />
+        <label for="fish">Lajoska the Goldfish</label>
+      </div>
+      <h2>Do you want to sign up for cat facts?</h2>
+      <div class="horizontal-radio facts">
+        <input type="radio" id="yes" name="facts" value="yes" />
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="facts" value="no" />
+        <label for="no">No</label>
+      </div>
+      <div class="horizontal">
+        <input type="button" name="i-love-cats" value="I love cats" disabled='true' class="facts-button">
+        <input type="button" name='sign-up' value="Sign up" disabled='true' class="sign-up-button">
+      </div>
+    </form>
+  </div>
+  <script src="./app.js"></script>
+</body>
+
+</html>
