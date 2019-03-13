@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(233, 232, 231);
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(68, 68, 68);
+}
+
+h1{
+  font-weight: 600;
+  text-align: left;
+}
+h2{
+  text-align: center;
+}
+
+
+.form-field{
+  width: 350px;
+  padding: 20px 70px;
+  background-color: rgb(255, 255, 255);
+  margin: 50px auto;
+
+}
+
+
+input:focus{
+  outline: 1px solid rgb(107, 235, 107);
+}
+
+
+.horizontal-radio{
+  display: flex;
+  justify-content: center;
+}
+
+.horizontal-radio label {
+  margin: auto 20px auto 10px;
+}
+.horizontal{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-display{
+  font-weight: 600;
+}

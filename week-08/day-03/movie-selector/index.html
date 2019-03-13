@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Movie selector</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+  <div class="form-field">
+    <h1>Movie selector</h1>
+    <form action="/login" method="POST">
+      <input list="genre" value="Select a genre" class="genre-select" name="genre-list"/>
+      <datalist id="genre">
+        <option value="Sci-fi"></option>
+        <option value="Drama"></option>
+        <option value="Comedy"></option>
+      </datalist>
+      <input list="movies" value="Select a movie" class="movie-select" name="moive-list"/>
+      <datalist id="movies">
+      </datalist>
+      <p>The selected movie is: <span class="movie-display">-</span></p>
+    </form>
+
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
