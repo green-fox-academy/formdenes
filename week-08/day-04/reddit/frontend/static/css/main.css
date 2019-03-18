@@ -1,0 +1,83 @@
+body{
+  font-family: 'Lato',sans-serif;
+  font-weight: 300px;
+  background-color: rgb(222, 224, 230);
+  margin: 0;
+}
+
+.header {
+  background-image: url("/static/assets/header.jpg");
+  background-size: 150%;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1{
+  color: white;
+  font-weight: 300;
+  font-size: 60px;
+  letter-spacing: 4rem;
+}
+
+.content{
+  margin: 30px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post{
+  background-color: rgb(245, 245, 245);
+  flex-basis: 400px;
+  flex-grow: 1;
+  max-width: 600px;
+  margin: 0 20px;
+  display: flex;justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.votes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 150px;
+}
+
+.votes img{
+  flex-grow: 0;
+  width: 20px;
+}
+
+.votes .score{
+  color: rgb(177, 177, 177);
+  font-weight: 900;
+}
+
+.post-content h2 {
+  font-weight: 500;
+  color: rgb(70, 70, 70);
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.post-content p{
+  margin: auto;
+  font-size: 14px;
+  color: rgb(100, 100, 100)
+}
+
+.post-content p span{
+  color: rgb(65, 65, 255);
+}
+
+.post-content a{
+  font-size: 14px;
+  margin: 10px 0;
+  margin-right: 10px;
+  text-decoration-line: none;
+  color: rgb(100, 100, 100);
+}

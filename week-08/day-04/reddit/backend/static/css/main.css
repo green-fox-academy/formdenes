@@ -6,8 +6,10 @@ body{
 }
 
 .header {
-  background-image: url("./assets/header.jpg");
+  background-image: url("/static/assets/header.jpg");
   background-size: 150%;
+  background-position-x: 50%;
+  background-position-y: 50%;
   width: 100%;
   height: 300px;
   display: flex;
@@ -19,7 +21,7 @@ body{
   color: white;
   font-weight: 300;
   font-size: 60px;
-  letter-spacing: 4rem;
+  letter-spacing: 1em;
 }
 
 .content{
@@ -29,15 +31,23 @@ body{
   justify-content: center;
 }
 
-.post{
-  background-color: rgb(245, 245, 245);
+.posts{
   flex-basis: 400px;
   flex-grow: 1;
-  max-width: 600px;
-  margin: 0 20px;
-  display: flex;justify-content: center;
+  max-width: 800px;
+}
+
+.post{
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  margin:5px 20px;
+  display: flex;
+  justify-content: start;
   align-items: center;
   padding: 20px 0;
+}
+.post:hover{
+  border: 1px solid black;
 }
 
 .votes{
@@ -80,4 +90,40 @@ body{
   margin-right: 10px;
   text-decoration-line: none;
   color: rgb(100, 100, 100);
+}
+
+.side-bar{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 300px;
+}
+
+.side-bar button{
+  background-color: rgb(68, 171, 240);
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 1px;
+  box-shadow: hidden;
+  border: none;
+  padding: 10px;
+  color: white;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.side-bar .about{
+  background-color: rgb(235, 235, 235);
+  border-radius: 1px;
+}
+.side-bar .about h3{
+  margin: 0;
+  background-color: rgb(245, 245, 245);
+  padding: 10px;
+  color: rgb(100, 100, 100);
+  text-transform: uppercase;
+}
+
+.side-bar .about h3 span{
+  text-transform: none;
+  color: rgb(65, 65, 255)
 }

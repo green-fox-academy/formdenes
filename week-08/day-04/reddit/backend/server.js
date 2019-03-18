@@ -29,9 +29,6 @@ app.use('/static', express.static('static'));
 }); 
 //conn.end();
 
-app.get('/home', (req, res) => {
-  res.send('Hello World');
-});
 
 app.get('/posts',(req,res) => {
   conn.query(`SELECT
@@ -49,7 +46,7 @@ app.get('/posts',(req,res) => {
       res.status(500).send();
       return;
     }
-    res.json({posts: rows});
+    res.render('index',{posts: rows});
   });
 });
 
@@ -198,34 +195,6 @@ app.delete('/posts/:id', (req, res) => {
     
   });
 });
-
-app.get('/', (req, res) => {
-  const category = 'category' in req.query? req.query.category:'%';
-  const publisher = 'publisher' in req.query? req.query.publisher:'%';
-  const plt = 'plt' in req.query? req.query.plt:'1000';
-  const pgt = 'pgt' in req.query? req.query.pgt:'0';
-  let condition = `WHERE cate_descrip LIKE "${category}" 
-  AND pub_name LIKE "${publisher}"
-  AND book_price BETWEEN ${pgt} AND ${plt}`;
-  console.log(condition);
-  conn.query(`SELECT book_name,
-  aut_name,
-  cate_descrip,
-  pub_name,
-  book_price
-  FROM book_mast bm LEFT JOIN author a ON bm.aut_id=a.aut_id
-  LEFT JOIN category c ON bm.cate_id=c.cate_id
-  LEFT JOIN publisher p ON bm.pub_id=p.pub_id ${condition};`, (err, rows) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send();
-      return;
-    }
-    res.render('books', {books: rows});
-    //console.log(rows);
-  });
-});
-
 
 app.listen(PORT, () => {
   console.log(`Server is running at ${PORT}`);

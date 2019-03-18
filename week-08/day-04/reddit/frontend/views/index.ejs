@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to my Reddit</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Space</h1>
+  </div>
+  <div class="content">
+    <%posts.forEach(post=>{%>
+    <div class="post">
+      <div class="votes">
+        <img class="upvote" src="/static/assets/upvote.png">
+        <div class="score">
+          <%=post.score%>
+        </div>
+        <img class="downvote" src="/static/assets/downvote.png">
+      </div>
+      <div class="post-content">
+        <h2 class="post-tile"><%=post.title%></h2>
+        <p class="post-date"><%=`submitted at ${post.timesstamp} by `%><span class="user"><%=`${post.owner == ''? anonymus: post.owner}`%></span> </p>
+        <div class="post-actions">
+          <a class="post-modify" href="#">modify</a>
+          <a class="post-delete" href="#">delete</a>
+        </div>
+      </div>
+    </div>
+      <%})%>
+    <div class="side-bar">
+      <button>Submit a new post</button>
+      <div class="about">
+        <h3>About <span>r/space</span></h3>
+        <div class="about-body">
+          <ul>
+            <li>This is the first thing</li>
+            <li>This is the second thing</li>
+            <li>This is the third thing</li>
+            <li>This is the fourth thing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/static/js/index.js"></script>
+</body>
+
+</html>
