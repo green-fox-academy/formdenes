@@ -1,0 +1,31 @@
+body{
+  margin: 0;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-auto-rows: minmax(200px, auto);
+  justify-content: center;
+  align-items: stretch;
+}
+
+.container > div{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  border: 5px solid purple;
+}
+
+.left{
+  background-color: yellow;
+}
+
+.middle{
+  background-color: greenyellow;
+
+}
+
+.right{
+  background-color: yellow;
+}
