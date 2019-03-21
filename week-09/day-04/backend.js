@@ -13,7 +13,7 @@ const APP_PORT = 4000;
 dotenv.config();
 
 app.use(express.json());
-app.use(express.static('frontend-assets'));
+app.use('/frontend-assets',express.static('frontend-assets'));
 
 app.listen(APP_PORT, () => {
   console.log(`Server is running at ${APP_PORT}`);
@@ -120,7 +120,6 @@ const getAllIds = () => {
     )})
 }
 
-
 const getQuestion = (id) => {
   return new Promise ((resolve, reject) => {
     connection.query(
@@ -196,6 +195,7 @@ const insertNewAnswer = (qId, answer, isCorect) => {
     );
   })
 }
+
 const deleteQuestion = (qId) => {
   return new Promise ((resolve, reject) => {
     connection.query(
