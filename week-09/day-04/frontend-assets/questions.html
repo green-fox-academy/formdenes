@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Questions</title>
+  <link rel="stylesheet" type="text/css" href="/frontend-assets/questions.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
+
 <body>
-  <div id="message">
-    <p></p>
-  </div>
-  <form>
-    <label for="url">URL</label><br/>
-    <input type="text" name="url" id="form-url"><br/>
-
-    <label for="alias">Alias</label><br/>
-    <input type="text" name="alias" id="form-alias"><br/>
-
+  <h1>Create New Question</h1>
+  <form class="field">
+    <input type="text" name="question" id="question-question" value="Type your question here">
+    <label for="answers">Answers</label>
+    <div id="answers">
+      <div class="answer-field">
+        <label for="answer1">#1</label>
+        <input type="text" name="answers" id="answer1-text">
+        <input type="radio" id="answer1-radio" name="answers" value="1">
+      </div>
+      <div class="answer-field">
+        <label for="answer1">#2</label>
+        <input type="text" name="answers" id="answer2-text">
+        <input type="radio" id="answer2-radio" name="answers" value="2">
+      </div>
+      <div class="answer-field">
+        <label for="answer3">#3</label>
+        <input type="text" name="answers" id="answer3-text">
+        <input type="radio" id="answer3-radio" name="answers" value="3">
+      </div>
+      <div class="answer-field">
+        <label for="answer4">#4</label>
+        <input type="text" name="answers" id="answer4-text">
+        <input type="radio" id="answer4-radio" name="answers" value="4">
+      </div>
+    </div>
     <button type="submit" id="submit-button">Submit</button>
   </form>
-  <script src="frontend.js"></script>  
+  <h1>Manage Questions</h1>
+  <div class="field">
+    <div class="question">
+      <p>Question #1 and i just want to make it realy long, to see, what will happen. I should write some more lines to it because it was'nt enough.</p>
+      <button class="delete-button">delete</button>
+    </div>
+  </div>
+
+  <a href="/frontend-assets/game.html">Play the Game</a>
+  <script src="/frontend-assets/questions.js"></script>
 </body>
+
 </html>

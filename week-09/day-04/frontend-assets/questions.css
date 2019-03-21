@@ -1,0 +1,106 @@
+body{
+  background-color: rgb(228, 228, 228);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.field{
+  background-color: white;
+  border-radius: 10px;
+  width: 900px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2{
+  text-align: center;
+}
+#answers{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-field{
+  display: flex;
+
+}
+.answer-field:nth-child(2){
+  flex-grow: 1;
+}
+
+button{
+  height: 50px;
+  margin: 10px;
+  background-color: rgb(104, 176, 235);
+  border-radius: 3px;
+  box-shadow: none;
+  border: hidden;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+}
+p{
+  font-weight: 500;
+  font-size: 24px;
+  text-align: left;
+  margin: 20px 0;
+  padding: auto 0;
+}
+
+.question{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.delete-button{
+  background-color: rgba(0,0,0,0);
+  color: rgb(209, 36, 79);
+}
+
+button:hover{
+  filter: brightness(110%);
+}
+
+button:active{
+  filter: brightness(80%);
+}
+
+button:focus{
+  outline: none;
+}
+
+label{
+  font-size: 26px;
+}
+
+input[type|="text"]{
+  height: 30px;
+  padding: 5px 5px;
+}
+
+a{
+  text-align: center;
+  margin: 20px auto;
+  text-decoration-line: none;
+  color: rgb(38, 128, 201);
+  font-weight: bold;
+}
+a:visited{
+  text-decoration-line: none;
+  color: rgb(38, 128, 201);
+}
+
