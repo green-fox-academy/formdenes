@@ -38,6 +38,9 @@ const loadQuestions = () => {
 }
 
 const submitQuestion = (event) => {
+  radioButtons = document.querySelectorAll('input[type="radio"]');
+  let radioValues = [];
+  radioButtons.forEach(button => radioValues.push(button.checked));
   if (event.target.getAttribute('type') == 'text') {
     event.target.value = '';
   }
@@ -51,18 +54,40 @@ const submitQuestion = (event) => {
     answerFields.forEach(answer => {
       answers.push(answer.value)
     });
-    console.log(answers);
-    if(!questionField.value == '' ){
-      console.log('ok');
-      
+    let answersNotEmpty = answers.every(value => value != '');
+    let checkedRadio = null;
+    radioValues.forEach((value, index) => value == true? checkedRadio = index:null);
+    if(!questionField.value == '' && answersNotEmpty && checkedRadio != null){
+      let newQuestion = {};
+      newQuestion.question = questionField.value;
+      let answerObjects = [];
+      answers.forEach((answer, index) => {
+        let answerObject = {};
+        answerObject[`answer_${index+1}`] = answer;
+        answerObject['is_correct'] = radioValues[index];
+        answerObjects.push(answerObject);
+      });
+      newQuestion.answers = answerObjects;
+      console.log(newQuestion);
+      const url = ('/api/questions/');
+    fetch(url, {
+      method: "POST",
+      mode: "cors", 
+      cache: "no-cache", 
+      credentials: "same-origin", 
+      headers: {
+          "Content-Type": "application/json",
+      },
+      redirect: "follow", 
+      referrer: "no-referrer", 
+      body: JSON.stringify(newQuestion)
+    })
+    .then(loadQuestions)
+    .catch(console.log);
     }
-    else {console.log('notOK')}
+    else {alert('Please fill all fields!')}
   }
   else{
-  radioButtons = document.querySelectorAll('input[type="radio"]');
-  radioButtons.forEach((button, index) => {
-    console.log(`button${index}`, button.checked);
-  })
 }
 }
 
